@@ -16,10 +16,10 @@ public class Function {
         System.out.println("Welcome to the calculator of tan(x).");
         double x;
         while(true){
-            System.out.print("input x: ");
+            System.out.print("\ninput x: ");
             try{
                 x=sc.nextDouble();
-                System.out.print("tan(x)=");
+                System.out.print("\ntan(x)=");
                 System.out.print(f.tan(x));
                 System.out.println();
             }catch(Exception e){
