@@ -38,7 +38,7 @@ public class Function2 {
                 System.out.print(f.tan(x));
                 System.out.println();
             }catch(Exception e){
-                System.out.println("Invalid input. Please try again.");
+                System.out.println("Invalid input, x must be a real number. Please try again.");
                 sc.next();
             }
         }
