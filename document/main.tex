@@ -87,7 +87,7 @@ The function tan(x), which is called tangent function, is one of the trigonometr
 The model below is based on the guideline in IEEE Guide for Information Technology System Definition Concept of Operation (ConOps) Document.\cite{1998ieee}
 \begin{enumerate}
     \item User: A user who is going to calculate the value of tan(x) with the input x using a calculator.
-    \item Task: Calculate the output of tan(x) given the input x and who the result on the screen to the user.
+    \item Task: Calculate the value of tan(x) given the input x and show the result on the screen to the user.
     \item Environment:
     \begin{itemize}
         \item Technical environment: Power supply of the calculator. Runtime environment.
@@ -255,7 +255,7 @@ $$cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^{n}x^{2n}}{(2n)!}=1-\frac{x^{2}}{2!}+\fra
 \end{breakablealgorithm}
 
 \subsection{Algorithm 2}
-The function tan(x) has a characteristic below:
+The function tan(x) has a characteristic below\cite{enwiki:1101002187}:
 $$tan(a + b)=\frac{tan(a) + tan(b)}{1 - tan(a)tan(b)}$$
 Based on this characteristic, we can iteratively add small numbers into the angle until it reaches x. Assuming x is greater than zero, if not let $x=-x$ using the characteristic that $tan(-x)=-tan(x)$. Then the tan(x) can be calculated as below:
 $$x_0=0, x_{i+1}=x_i+\Delta_i, x_n=x$$$$tan(x_{i+1})=\frac{tan(x_i) + tan(\Delta_i)}{1 - tan(x_i)tan(\Delta_i)}$$
@@ -312,7 +312,7 @@ The function is implemented from scrach in Java. No built-in library like Math p
 
 \newpage
 \subsection{Debugging}
-In order to debug efficiently, the built-in debugger of the IDE IntelliJ IDEA is used. The debugger is a powerful tool. It allows users to monitor and interfere with the code and quickly catch the bugs in their code. As a built-in tool, it works well with IDE itself. Users can easily access it and debug with it during coding. The IDE provided multiple configurations of it and each process such as resume, step over and step into is easy to access. To monitor a variable, users can easily type name of the variable or just use the editor of IDE to select it. Breakpoint can be added by clicking the left side of the editor and can also be modified during debugging. The figure \ref{Fig.debug} shows the screen shot of the debugger.
+In order to debug efficiently, the built-in debugger of the IDE IntelliJ IDEA is used\cite{intellijideahelp}. The debugger is a powerful tool. It allows users to monitor and interfere with the code and quickly catch the bugs in their code. As a built-in tool, it works well with IDE itself. Users can easily access it and debug with it during coding. The IDE provided multiple configurations of it and each process such as resume, step over and step into is easy to access. To monitor a variable, users can easily type name of the variable or just use the editor of IDE to select it. Breakpoint can be added by clicking the left side of the editor and can also be modified during debugging. The figure \ref{Fig.debug} shows the screen shot of the debugger.
 \begin{itemize}
     \item \textbf{Advantages}: As a built-in debugger it is integrated well with the IDE. It has GUI and easy to process. It provides real time feed back.
     \item \textbf{Disadvantages}: Sometimes it is slow when monitoring too many variables or variables which take large space. It is not so powerful when monitoring multi-thread or multi-process program.
@@ -333,7 +333,7 @@ Each algorithm of the code only contains one source code file and it does not re
 After debugging and testing the source code, the program is confirmed correct under a certain error limit. The program might crush when user inputs a string which is not a valid real number or a double number, or is a real number that causes divided by zero error, and this situation can be avoided by error handling. When there is an invalid input, an error message is thrown telling the user to try again. This makes the program robust. To get the correct answer efficiently, the algorithms are well designed. In both algorithm 1 and algorithm 2, the loops will only run hundreds of times in total. The result can be calculated almost instantly with well precision. Users can quickly get the correct answer which shows the program time-efficient and usable.\newline
 
 \subsubsection{Pragmatic Quality}
-In order to check and maintain the pragmatic quality of the Java source code, the tool \textbf{Checkstyle} is used. It is a tool that helps programmers write Java code that adheres to a coding standard. It can check many aspects of the source code, find class design problems, method design problems, and also be able to check layout and formatting issues. In IDE IntelliJ IDEA Checkstyle is installed as a plugin and used within the IDE shown in figure \ref{Fig.checkstyle}. It checks the source code following the specific rule standard.
+In order to check and maintain the pragmatic quality of the Java source code, the tool \textbf{Checkstyle}\cite{checkstyle} is used. It is a tool that helps programmers write Java code that adheres to a coding standard. It can check many aspects of the source code, find class design problems, method design problems, and also be able to check layout and formatting issues. In IDE IntelliJ IDEA Checkstyle is installed as a plugin\cite{checkstyleplugin} and used within the IDE shown in figure \ref{Fig.checkstyle}. It checks the source code following the specific rule standard.
 \begin{itemize}
     \item \textbf{Advantages}: Can find violations of code conventions. The rules can be customized.
     \item \textbf{Disadvantages}: It only check coding conventions but can't find bugs. Some of the information may not be necessary.
